@@ -18,6 +18,22 @@ Json Web Token are composed of a header, body(payload) and signature
 
 38 : react context
 
+40 : explain how to set up tailwind css
+go into project root
+then 
+npm install -D tailwindcss
+
+npx tailwindcss init
+
+go into tailwind config file
+and indicate to which files tailwind applies :
+in module.exports contents add the following line:
+"./src/**/*.{js,jsx,ts,tsx}"
+
+then in index.css add the following handles:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 
