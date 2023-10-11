@@ -82,6 +82,64 @@ pages can also be statically generated
 //45
 
 
+unit testing
+integration testing
+snapshot testing
+selenium webdriver testing
+
+//46
+
+
+//49
+redux is a state management library, similar to useReducer.
+it is useful to mange complex states.
+
+//50 RESTful API stands for 
+Representational State Transfer,
+information is delivered via HTTP
+usually in JSON 
+
+
+
+//51 npx stands for Node Package Execute
+it's a NPM package runner
+
+
+//52 
+var, let and const scopes :
+
+variables declared with var are in the function scope.
+variables declared with let are in the block scope.
+variables declared with const are in the block scope.
+
+
+var:
+
+function test(){
+    var x =3;
+}
+// x is undefined here
+
+for(let i=0; i<3; i++){
+    //i defined here
+}
+
+i not defined here
+
+for (var i=0; i<3; i++){
+    //i defined here
+}
+
+//i not defined here
+
+
+{
+const x =1;
+//x defined here
+}
+
+//x not defined here
+
 
 
 
