@@ -1,0 +1,17 @@
+35 : 
+resolvers are functions that define how data should be fetched and computed.
+they are responsible for providing the data in each field
+of a graphql qurey.
+
+const resolver = {
+    query : {
+        hello : () => {
+            return `hello query`;
+        },
+    },
+};
+
+
+
+
+ 
