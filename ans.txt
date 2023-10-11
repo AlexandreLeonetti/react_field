@@ -35,6 +35,58 @@ then in index.css add the following handles:
 @tailwind components;
 @tailwind utilities;
 
+//41
+HOC design pattern
+presentational  and logic container pattern
+Hook design pattern
+Provider pattern
+
+
+//42 to manage events in react, we use 
+APIs such as onClick, onSubmit, onChange
+
+import React from "react"
+
+function Example(){
+    function handleClick(){
+        console.log("you clicked");
+    };
+
+    return(
+        <div>
+            <button onClick={handleClick}> click here </button>
+        </div>
+    )
+}
+
+
+export default Example;
+
+// 43 handling events in javascript
+
+<button id="b1">click here</button>
+
+belement = getElementById("b1")
+
+belement.addEventListener("click", function(){alert("you clicked");});
+
+
+
+
+//44 the basics of SSR and next.js
+react is compiled on ther server side, rather than browser
+pages are loading a lot faster
+data is populated after
+pages can also be statically generated
+
+//45
+
+
+
+
+
+
+
 
 
  
