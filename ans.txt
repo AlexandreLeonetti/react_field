@@ -11,6 +11,13 @@ const resolver = {
     },
 };
 
+36 :
+Json Web Token are composed of a header, body(payload) and signature
+
+37 : they are used for authentication.
+
+38 : react context
+
 
 
 
