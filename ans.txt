@@ -139,7 +139,17 @@ const x =1;
 }
 
 //x not defined here
+//53 hoisting means using var before declaration:
 
+x = 8
+var x;(//var x;)
+ok
+
+y=8;
+let y; //undefined
+
+x=5;
+const z; //undefined
 
 
 
