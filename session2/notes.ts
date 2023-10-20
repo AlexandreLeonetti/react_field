@@ -47,7 +47,31 @@ let chicken : Chicken = {wings : 2, colourful : false, flies : false}
 //4 merging, 5 extending ok
 
 // 6 imperative vs declarative :
-//
+// declarative : i order a pizza.
+// imperative, give the receipen instructions.
+// 7
+//declarative
+//let x = "test"
+//x.toUpperCase() // TEST
+//imperative
+/*
+function toUpCase(s){
+    let upperS=""
+    for (i=0; i<s.length; i++){
+        upperS.append(s[i].toUpperCase);
+    }
+
+    return upperS
+
+*/
+
+// 8 relationship between React and Dom.
+// react operate state changes on Virtual Dom.
+// compute the difference between prevState VDOM and current state VDOM
+// then renders the final result to real DOM. this process is much faster.
+
+//9 what are props and components ?
+
 
 
 
