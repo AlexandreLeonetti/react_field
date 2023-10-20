@@ -71,6 +71,29 @@ function toUpCase(s){
 // then renders the final result to real DOM. this process is much faster.
 
 //9 what are props and components ?
+//componenets are reusable blocks of code. they work the same as javascript
+//functions but they return html or other components
+//props is a short hand for properties
+// they are properties that are passed from parent component to chidren components
+// they are similar to arguments of js functions
+
+
+//10 
+// children are components placed in lower level in the vdom tree. parent components
+// call children components.
+//
+
+// 12 templaste literals
+// let t  = `this is a ${x} of template literal`;
+
+//13 spread attributes
+//var arr = [0,1,2]
+//var arr2 = [...arr]
+
+let obj1 = { a: 1, b:2}
+let [a , b] = [3,4] // destructuring 
+//
+// hoc function
 
 
 
