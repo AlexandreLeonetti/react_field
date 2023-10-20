@@ -97,4 +97,7 @@ let [a , b] = [3,4] // destructuring
 
 
 
-
+// 20 first class functions means they are variables. and can manipulated as such.
+// 21 purity in javascript refers to functions who's variables are limited to
+// function's scope and do not affect external environment.
+//
