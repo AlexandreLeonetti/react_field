@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import Count from "./Count"
+import Red from "./Red"
 
 function App() {
     const [x, setX] = useState(0)
@@ -28,6 +29,7 @@ function App() {
       <button onClick={handleX}>{x}</button>
       <div> {count} </div>    
       <Count/>
+      <Red/>
     </div>
   );
 }
