@@ -15,3 +15,6 @@ var arr4 = [...arr3] // this spread operator is a shortcut for deep copy
 arr4[0] = 1000
 console.log("arr3", arr3)
 console.log(arr4)
+
+
+//same for push vs concat
