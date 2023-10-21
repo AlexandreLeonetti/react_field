@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import Count from "./Count"
 
 function App() {
     const [x, setX] = useState(0)
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <button onClick={handleX}>{x}</button>
       <div> {count} </div>    
+      <Count/>
     </div>
   );
 }
