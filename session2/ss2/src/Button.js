@@ -1,11 +1,13 @@
-function Button(){
+import React from "react"
+function Button({handleClick, text} ){
+    console.log("Button rendered")
 
     return(
         <div>
-            <button onClick={()=>{props.handleClick()}}> {text}</button>
+            <button onClick={()=>{handleClick()}}> {text}</button>
         </div>
     )
 }
 
 
-export default Button;
+export default React.memo(Button);
