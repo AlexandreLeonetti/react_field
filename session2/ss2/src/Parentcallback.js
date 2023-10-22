@@ -6,11 +6,9 @@ function ParentCallBack(){
     const [salary, setSalary] = useState(0)
     const [age, setAge] =  useState(0)
 
-/*
-    const incSalary = () =>{
+    /*const incSalary = () =>{
         setSalary(prev => prev+1000)
-    }
-    */
+    }*/
     const incSalary = useCallback(()=>{
         setSalary(salary+1000)
     },[salary]);
@@ -24,10 +22,10 @@ function ParentCallBack(){
         <div>
             <Title/>
             <div>salary : {salary} </div>
-            <Button handleClick={incSalary} text="increase Salary"/>
+            <Button text="buttonSalary" handleClick={incSalary} />
 
             <div>age : {age}</div>
-            <Button handleClick={incAge} text="increase Age"/> 
+            <Button text="buttonAge" handleClick={incAge} /> 
         </div>
         )
 }
