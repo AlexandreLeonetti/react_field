@@ -105,4 +105,7 @@ let [a , b] = [3,4] // destructuring
 // UI is a function of State. f(state){
 //                                      returns  UI
 //                                      }
-                                      
+// 3 react design patterns :
+// props/Parent>children
+// function container, UI children
+// HOC component                                      
