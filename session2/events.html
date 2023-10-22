@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head></head>
+    <body>
+        <button id="one">click here</button>
+        <button id="log">click and log</button>
+
+        <script>
+            var one = document.getElementById("one");
+
+
+            one.addEventListener("click", ()=>{
+                        alert("one clicked")
+            });
+
+            var logButton = document.getElementById("log");
+           
+            const log = (e) => { console.log(`logged stuff : ${e.target.tagName}`)}
+
+            logButton.addEventListener("click",log);
+
+            
+            
+        </script>
+    </body>
+
+</html>
