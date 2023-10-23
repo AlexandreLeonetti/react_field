@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=hvvWv2GLWss
+npm i -g expo-cli
+
+npx create-expo-app -t expo-template-blank-typescript
+
+code .
+
+
+
