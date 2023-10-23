@@ -1,9 +1,46 @@
 https://www.youtube.com/watch?v=hvvWv2GLWss
+https://github.com/sonnysangha/UPS-2.0-Sample-Data/blob/main/sample_data.json
 npm i -g expo-cli
 
 npx create-expo-app -t expo-template-blank-typescript
 
 code .
 
+cd ups-clone
+npx expo start
+built firebase dasta base
+built real time data base
+
+set up database
+https://console.firebase.google.com/project/upsclone-de154/overview
+start in test mode => enable
+click on value after url and past the json file
+we are basically crerating a json tree from which we pull data
+
+then we go on stepZen
+www.stepzen.com
+log in with github
+build graphQL API
+npm install -g stepzen
+log in with stepzen account 
+stepzen login -a xihe
+enter admin key when prompted
+should prompt "you have succesfully logged in with darhan account"
+
+stepzen import graphql
+stepzen start
 
 
+npm install tailwind-rn
+
+npx setup-tailwind-rn
+
+possibility to add es7 react native snippet in vscode
+around 34 min mark
+solved tailwind not working by specifying the directory in the 
+tailwind config file
+two terminals to work with : 
+npm run dev:tailwind
+npx expo start
+
+# still need to get it to work on android.
