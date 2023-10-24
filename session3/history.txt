@@ -44,3 +44,16 @@ npm run dev:tailwind
 npx expo start
 
 # still need to get it to work on android.
+
+stepzen init
+api/invisible-cow 
+api/operatic-buffalo
+
+npm install -g stepzen
+stepzen login -a darhan
+darhan::stepzen.io+1000::99badb08155030c81bd825093acd285835d42344a06d4af0e3169a47027edb7b
+
+stepzen import curl https://upsclone-de154-default-rtdb.europe-west1.firebasedatabase.app/orders.json --query-type Order --query-name getOrders --name order
+stepzen import curl https://upsclone-de154-default-rtdb.europe-west1.firebasedatabase.app/trackingItems/1Z4V180W0324616505.json --query-type TrackingItemList --query-name getTrackingItemsById --name trackingItems
+
+# about 1h36 min 

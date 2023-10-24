@@ -2,7 +2,38 @@
   display: flex
 }
 
-.text-red-500 {
+.h-64 {
+  height: 16rem
+}
+
+.w-full {
+  width: 100%
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem
+}
+
+.pb-0 {
+  padding-bottom: 0px
+}
+
+.pt-5 {
+  padding-top: 1.25rem
+}
+
+.text-blue-500 {
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity))
+  color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
+.text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity))
 }
