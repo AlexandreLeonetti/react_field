@@ -55,5 +55,11 @@ darhan::stepzen.io+1000::99badb08155030c81bd825093acd285835d42344a06d4af0e3169a4
 
 stepzen import curl https://upsclone-de154-default-rtdb.europe-west1.firebasedatabase.app/orders.json --query-type Order --query-name getOrders --name order
 stepzen import curl https://upsclone-de154-default-rtdb.europe-west1.firebasedatabase.app/trackingItems/1Z4V180W0324616505.json --query-type TrackingItemList --query-name getTrackingItemsById --name trackingItems
+stepzen import curl https://upsclone-de154-default-rtdb.europe-west1.firebasedatabase.app/customers.json --query-type Customer --query-name getCustomers --name customer 
 
 # about 1h36 min 
+stepzen start --dir=./ --endpoint=api/operatic-buffalo --dashboard=local --port=5001
+# 1h52
+apollographql.com/docs/react/
+at root of project install
+npm install @apollo/client graphql
