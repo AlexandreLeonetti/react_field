@@ -1,0 +1,46 @@
+{
+	"h-64": {
+		"style": {
+			"height": 256
+		}
+	},
+	"w-full": {
+		"style": {
+			"width": "100%"
+		}
+	},
+	"bg-white": {
+		"style": {
+			"--tw-bg-opacity": 1,
+			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
+		}
+	},
+	"px-10": {
+		"style": {
+			"paddingLeft": 40,
+			"paddingRight": 40
+		}
+	},
+	"pb-0": {
+		"style": {
+			"paddingBottom": 0
+		}
+	},
+	"pt-5": {
+		"style": {
+			"paddingTop": 20
+		}
+	},
+	"text-red-600": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(220 38 38 / var(--tw-text-opacity))"
+		}
+	},
+	"text-orange-500": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(249 115 22 / var(--tw-text-opacity))"
+		}
+	}
+}
