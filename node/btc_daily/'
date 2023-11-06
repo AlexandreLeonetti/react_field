@@ -1,0 +1,43 @@
+/* let's inject the data into redis database. 
+ * add discretionary value if needed and we are done.
+ */
+
+const express = require("express");
+const cors  = require("cors");
+const Redis = require("redis");
+const redisClient =Redis.createClient() ;
+const yf = require("yahoo-finance");
+
+yf.historical({
+    symbol  :"BTC-USD",
+    from    :"2021-01-01",
+//    to      :"2023-11-01",
+}, function (err, data){
+    try{
+        console.log(data);
+    }catch(err){
+        console.log(err);
+    }
+});
+
+redisClient.connect()
+const app = express();
+app.listen(1111);
+
+
+
+async function createHistory (){
+    const price = 0;
+    try {
+        const result = await redisClient.rPush("history", [`${price}`]);
+        return result;
+    }catch(e){
+        console.log(e);
+    }
+}
+
+
+
+
+
+
