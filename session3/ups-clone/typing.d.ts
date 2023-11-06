@@ -37,7 +37,12 @@ type Order = {
 };
 
 type OrderResponse={
-	 value: String;
+	 value : Order;
 };
 
+type CustomerResponse ={
+	name : ID;
+	value: Customer;
+
+}
 

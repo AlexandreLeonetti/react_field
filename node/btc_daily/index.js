@@ -3,6 +3,10 @@
  * 2 TASK :  add discretionary value if needed and we are done.
  * perhaps build an adjustment server that is here only to replace the last
  * or few last values.
+ * this would be possible via POST request
+ * to either :
+ * DELETE, CHANGE OR ADD element in the price history.
+ * a bit like postman
  */
 
 const express = require("express");
