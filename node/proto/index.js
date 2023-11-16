@@ -16,6 +16,12 @@ function Cat () {
 
 let kitty = new Cat();
 
+//Protoypal inheritance and the prototypal chain.
+//ES6 introduced classes wich is the modern way of building objects.
+
+
+
+/* objects literals */
 
 
 
