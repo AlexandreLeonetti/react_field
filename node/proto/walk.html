@@ -1,0 +1,28 @@
+<DOCTYPE! html>
+<html>
+    <body>
+        <script>
+            let log = console.log;
+            // Object constructor
+            function Animal(species){
+                            this.species = species;
+                            this.eats   =   true;
+                        }
+            Animal.prototype.walks = function () {
+                            return `A ${this.species} is walking.`;
+                        };
+            const  Bear = new Animal("bear");
+            console.log(Bear.species);
+            console.log(Bear);
+            
+            console.log(Bear.walks());
+            // the prototype property is  where  inhgeritable props and methods are
+            log(Bear.__proto__ === Animal.prototype);
+            log(Bear.prototype === Animal.prototype);
+        </script>
+    </body>
+</html>
+
+
+
+

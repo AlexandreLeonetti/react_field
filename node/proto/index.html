@@ -1,0 +1,71 @@
+<DOCTYPE! html>
+<html>
+    <body>
+        <script>
+            let log = console.log;
+            log("this is a demo of protoypes in javascript");
+            /*
+            human = {
+                            alive : true
+                        }
+            musician = {
+                            plays : true
+                        }
+            // JS now has getPrototypeOf and setPrototypeOf methods instead of __proto__
+            Object.setPrototypeOf(musician, human);
+            // musician is inheriting the properties of human
+            // js looks up for properties in the musician object
+            // then in its protype ( from parent "class")
+            log(musician);
+            log(Object.getPrototypeOf(musician));
+            log(musician.__proto__);
+            log(Object.getPrototypeOf(musician) === musician.__proto__);
+            // the Object is the paretn of all js objects. 
+            console.log(musician.toString);
+            //extending the prototype chain futher into detail
+            const guitarist = {
+                            strings : 6,
+                            __proto__: musician
+                        }
+
+
+            log(guitarist);
+
+            */
+
+            const car = {
+                            doors : 2,
+                            seats : "vinyl",
+                            get setMaterial() {
+                                            return this.seats;
+                                        },
+                            set setMaterial(x) {
+                                            this.seats = x;
+                                        }
+                        }
+
+
+
+            const luxuryCar = {};
+            Object.setPrototypeOf(luxuryCar, car);
+            luxuryCar.seatMaterial = "leather"; // Note keyword "this"
+            // the material leather is only applied to the instance luxuryCar, not the general property object
+            // of car.
+            // this keyword refers to the instantiated object.
+            //log(luxuryCar);
+
+            log(luxuryCar.valueOf());
+            // loop using For Each
+            Object.keys(luxuryCar).forEach( key => log(key));
+            // loop using for in 
+            for(let key in luxuryCar){
+                            log(key)
+                        }
+
+        </script>
+    </body>
+</html>
+
+
+
+
