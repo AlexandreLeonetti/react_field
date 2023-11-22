@@ -13,3 +13,35 @@ function num(){ // hosited first
 }
 
 console.log(num); // ouput : 8;
+//
+// example 1
+
+function num() {}
+var num;
+console.log(typeof num); // function
+
+
+//example 2
+
+var num;
+function num(){}
+console.log(typeof num);//function
+
+
+// variables are always transformed at the very end.
+/*
+ * var num = 8;
+ * function num(){};
+ *  
+ *  will be transformed into
+ *
+ *  function num(){}
+ *  var num; // repeated declaration is ignored.
+ *  num = 8;
+ *
+ *  as a result num = 8;
+ */
+
+
+
+
