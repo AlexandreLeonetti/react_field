@@ -8,6 +8,10 @@ Promise.resolve(10)
 .catch(err => console.log( `error ${err}`))
 .then(x => console.log(` then ${x}`));
 
-
+/*
+ *
+ * an error thrown will land on the next catch
+ * and will ignore other then statements in between
+ */
 
 
