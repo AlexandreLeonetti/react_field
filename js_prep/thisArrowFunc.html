@@ -1,0 +1,32 @@
+<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">    <script>
+
+             'use strict';
+            var x = 5;
+            var y = 5;
+
+            function Operations(op1 = x, op2 = y) {
+                              this.x = op1;
+                              this.y = op2;
+                        };
+
+            Operations.prototype.sum = () => this.x + this.y;// returns 10
+            //Operations.prototype.sum = function(){return (this.x + this.y)};//returns 38
+            Operations.prototype.z = 300;
+
+            const op = new Operations(18, 20);
+
+            console.log(op.sum());
+
+            console.log(Operations);
+            console.log(op.x);
+            console.log(op.z);
+            console.log(Operations.z);
+                   /*
+           arrow functions don't have their own this, instead this
+           refers to the scope in which the arrow function is defined. our function
+           is defined in the global scope.
+
+           this in global scope refers to the global object, even in strict mode.
+           */
+                </script>
+                   </pre></body></html>
