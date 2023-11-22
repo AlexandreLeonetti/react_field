@@ -15,3 +15,11 @@ Promise.resolve(10)
  */
 
 
+/*
+ * then handlers just like catch handlers 
+ * always return promises
+ */
+
+
+
+
