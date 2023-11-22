@@ -1,0 +1,3 @@
+/* some variable scope test */
+
+
