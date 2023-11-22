@@ -21,5 +21,7 @@ Promise.resolve(10)
  */
 
 
-
+/*
+ * need to check promises and asynchronous structures
+ */
 
