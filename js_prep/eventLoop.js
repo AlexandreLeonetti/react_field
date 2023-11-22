@@ -1,4 +1,6 @@
 /* some event loop demo */
+/* https://intspirit.medium.com/the-most-failed-javascript-interview-questions-849664e5bee 
+ */
 
 setTimeout(() => console.log(1), 0);
 
@@ -37,4 +39,6 @@ console.log(5);
  * sequence is now 2,3,5
  *
  * microtask queue has priority over macro so next is 4,1.
+ * the macroTask queue is named the "callback queue"
+ * the microTask queue is named the "the job queue"
  */
