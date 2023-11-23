@@ -3,7 +3,8 @@
 //
 
 //import { default } from "./module.mjs";
-import { test } from "./module.mjs";
+import x, { test } from "./module.mjs";
 
 
 console.log(test);
+console.log(x);
