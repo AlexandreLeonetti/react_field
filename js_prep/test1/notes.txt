@@ -1,0 +1,98 @@
+buyCoffee()
+  .then(function() {
+    return drinkCoffee();
+  })
+  .then(function() {
+    return doWork();
+  })
+  .then(function() {
+    return getTired();
+  })
+  .then(function() {
+    return goToSleep();
+  })
+  .then(function() {
+    return wakeUp();
+  });
+
+
+
+
+const firstPromise = new Promise(function(resolve) {
+  return resolve("first");
+});
+const secondPromise = new Promise(function(resolve) {
+  resolve("second");
+});
+const doAllThings = firstPromise.then(function() {
+  return secondPromise;
+});
+doAllThings.then(function(result) {
+  console.log(result); // This logs: "second"
+});
+
+
+https://github.com/getify/You-Dont-Know-JS/blob/6f51ed6746300f51bc6c930c080b8a7426b7629b/async%20%26%20performance/ch3.md#promise-trust
+
+
+
+// Option 1:
+doManyThings();
+// Option 2:
+(async function() {
+  try {
+    await doManyThings();
+  } catch (err) {
+    console.error(err);
+  }
+})();
+// Option 3:
+doManyThings().then((result) => {
+  // Do the things that need to wait for our function
+}).catch((err) => {
+  throw err;
+});
+
+
+
+
+// == Async/Await version ==
+async function multiply(a, b) {
+  return a * b;
+}
+async function foo() {
+  var result = await multiply(2, 5);
+  return result;
+}
+// Errors will be swallowed here
+(async function () {
+    var result = await foo();
+    console.log(result); // Logs 5
+})();
+// == Promises version ==
+function multiply(a, b) {
+  return new Promise(function (resolve) {
+    resolve(a * b);
+  });
+}
+function foo() {
+  return new Promise(function(resolve) {
+    multiply(2, 5).then(function(result) {
+      resolve(result);
+    });
+  );
+}
+// Errors will be swallowed here
+new Promise(function() {
+  foo().then(function(result) {
+    console.log(result); // Logs 5
+  });
+});
+
+
+
+for (item of someArray) {
+  await foo();
+}
+
+
