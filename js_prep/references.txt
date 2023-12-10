@@ -14,3 +14,9 @@ best git repos
 https://www.youtube.com/watch?v=oiyhpZupQnI
 
 http://callbackhell.com/
+
+
+https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch2.md
+
+https://github.com/KBPsystem777/You-Dont-Know-JS/tree/master/async%26performance
+https://github.com/KBPsystem777/You-Dont-Know-JS/tree/master/async%26performance
