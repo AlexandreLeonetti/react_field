@@ -1,0 +1,18 @@
+<doctype! HTML>
+    <html>
+<script>
+    function Num(){
+            this.getNum = 33;
+        }
+
+
+    Num.prototype.getNum = function(){
+            this.getNum = 20;
+        }
+
+    const one= new Num();
+
+    console.log(one.getNum);
+    console.log(one);
+</script>
+    </html>

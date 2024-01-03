@@ -1,0 +1,53 @@
+<doctype! html>
+<html>
+    <script>
+//'use strict';
+/*
+        console.log(55);
+var x = 5;
+var y = 5;
+
+function Operations(op1 = x, op2 = y) {
+  this.x = op1;
+  this.y = op2;
+};
+
+        Operations.prototype.sum = () => this.x + this.y;
+        Operations.prototype.show= () => console.log(this);
+
+const op = new Operations(10, 20);
+
+console.log(op.sum());
+        op.show();
+
+
+
+function foo(){
+    console.log(this);
+}
+
+function callFoo(fn){
+    fn();
+}
+
+const obj = {foo};
+
+callFoo(obj.foo);
+        */
+   var x = 8;
+
+        var xObject = {
+                        a : "happy",
+                        b : "sad",
+                        c : function(){
+                                            return this.a
+                                        },
+                        d : this.a
+                }
+        console.log(xObject.c());
+        console.log(xObject.d);
+        console.log(this);
+    </script>
+</html>
+
+
