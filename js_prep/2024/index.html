@@ -34,19 +34,15 @@ const obj = {foo};
 
 callFoo(obj.foo);
         */
-   var x = 8;
-
-        var xObject = {
-                        a : "happy",
-                        b : "sad",
-                        c : function(){
-                                            return this.a
-                                        },
-                        d : this.a
-                }
-        console.log(xObject.c());
-        console.log(xObject.d);
-        console.log(this);
+   var drink  = "wine";
+   var foo      = {
+               drink:"beer",
+               getDrink: function(){
+                           console.log(this);
+                           return this.drink;
+                       }
+           };
+        console.log(foo.getDrink());
     </script>
 </html>
 
