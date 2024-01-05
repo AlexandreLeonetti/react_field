@@ -8,8 +8,12 @@
 
             console.log(foo());
 
+
+            let bar = "bar"; // const let or var will still not be hoisted
+
             function foo(){
-                            return 999;
+                            //return 999;
+                            return bar;// throw error as foo is hoisted but not bar.
                         }
 
 
