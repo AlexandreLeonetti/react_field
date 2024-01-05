@@ -1,0 +1,21 @@
+<doctype! html>
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            'use strict';
+
+            Promise.resolve(1)
+                .then(x => { throw x })
+                .then(x => console.log("second then"))
+                .catch(err => {console.log("first catch",err)})
+                .then(()=> Promise.resolve(2))
+                .catch(err => { console.log("second catch")})
+                .then(x => console.log("last then",x));
+
+
+        </script>
+    </body>
+</html>
+
