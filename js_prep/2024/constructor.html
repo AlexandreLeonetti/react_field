@@ -6,11 +6,16 @@
 
 
         const Num = function(){
-                        this.getNum = () => 10;
+                        this.getNum = function(){return 22};
                     }
+
+
+        Num.prototype.getName = function (){ return "some name";};
+        Num.prototype.getNum  = function (){ return 888 };
         const nm = new Num();
 
         console.log(nm.getNum());
+        console.log(nm.getName());
 
 
         </script>
