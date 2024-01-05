@@ -1,0 +1,23 @@
+<doctype! html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Operations(coef){
+                            return {
+                                       sum : function(...args){
+                                                   return arguments[0]+coef;
+                                              }
+                                    }
+                        }
+
+            const ops = Operations(0.1);
+
+            console.log(ops.sum(1,2,3));
+            console.log(ops.sum(5,6,7));
+
+
+        </script>
+    </body>
+</html>
+
