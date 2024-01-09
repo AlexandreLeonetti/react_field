@@ -28,6 +28,10 @@ findRegex(
  .on('found', (file, match) => console.log(`Matched "${match}" in ${file} `))
  .on('error', err => console.error(`Error emitted ${err.message}`));
 
-
+/*
+ * it is recommended to always register a error event,
+ * as the class EventEmitter is designed to throw an error
+ * and edxit the app if an error happens.
+ */
 
 
