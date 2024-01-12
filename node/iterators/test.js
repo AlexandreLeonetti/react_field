@@ -1,14 +1,27 @@
-const randomItem =  require("./random-item.js");
+const makeDragon = require("./make-dragon");
 
 
+const dragonArmy = {
+    [Symbol.iterator]:()=>{
+        return {
+            next : () => {
+                const enoughDragonsSpawned = Math.random() > 0.75;
+                if (!enoughDragonsSpawned ){
+                    return {
+                        value : makeDragon(),
+                        done : false
+                    }
+                }
+                return {done:true};
 
-const makeDragon = () => {
-    const dragonSize = ['big','medium', 'small'];
-    const dragonAbilities = ['fire', 'ice', 'lightning'];
-
-    return randomItem(dragonSize) + " " + randomItem(dragonAbilities) + " " + 
-        "dragon" ;
+            }
+        }
+    }
 }
 
-console.log(makeDragon());
+
+for ( d of dragonArmy ){
+    console.log(d);
+}
+
 
