@@ -17,10 +17,10 @@ let result= iterator.next();
 console.log(result);
 
 while(!result.done){
-    console.log(`received value : ${result.value}`);
+    console.log(result);
     result = iterator.next();
 }
 
 
-console.log(`received value : ${result.value}`);
+console.log(result);
 
