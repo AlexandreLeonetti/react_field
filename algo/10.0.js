@@ -1,9 +1,11 @@
 function mergeSortedArrays(sortedArrays) {
     console.log(sortedArrays);
     var minHeap = [];
-    var sortedArraysIterators = sortedArrays.map((x) => x[Symbol.iterator]());
+    var sortedArraysIterators = sortedArrays.map((x) => x[Symbol.iterator]());//apparently
+    //attaches iterators to each arrays
     console.log(sortedArraysIterators);
 
+    // Iterate through each array, extract the first element, and push it into the min-heap
     sortedArraysIterators.forEach((iterator, i) => {
         var firstElement = iterator.next().value;
         if (firstElement !== undefined) {
@@ -13,16 +15,21 @@ function mergeSortedArrays(sortedArrays) {
         console.log("min_heap ", minHeap);
     });
 
+    // Process the min-heap until it's empty
     var result = [];
     while (minHeap.length > 0) {
         console.log("w min_heap ", minHeap);
         var smallestEntry = minHeap.shift();
         var smallestArrayIndex = smallestEntry[1];
         result.push(smallestEntry[0]);
+
+        // Move to the next element in the array corresponding to the popped entry
         var smallestArrayIterator = sortedArraysIterators[smallestArrayIndex];
         var nextElement = smallestArrayIterator.next().value;
         if (nextElement !== undefined) {
+            // Push the next element and the array index into the min-heap
             minHeap.push([nextElement, smallestArrayIndex]);
+            // Re-sort the min-heap based on the first element of each entry
             minHeap.sort((a, b) => a[0] - b[0]);
         }
     }

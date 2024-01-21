@@ -1,36 +1,36 @@
 function mergeSortedArrays(sortedArrays) {
     console.log(sortedArrays);
     var minHeap = [];
-    var sortedArraysIterators = sortedArrays.map((x) => x[Symbol.iterator]());//apparently
-    //attaches iterators to each arrays
+    var sortedArraysIterators = sortedArrays.map((x) => x[Symbol.iterator]());
     console.log(sortedArraysIterators);
 
-    // Iterate through each array, extract the first element, and push it into the min-heap
-
-    sortedArraysIterators.forEach((iterator, i) => {
-        var firstElement = iterator.next().value;
-        if (firstElement !== undefined) {
-            minHeap.push([firstElement, i]);
+    sortedArraysIterators.forEach((iterator, i)=>{
+        let firstElt= iterator.next().value;
+        if(firstElt!==undefined){
+            minHeap.push([firstElt, i])
         }
-        minHeap.sort((a, b) => a[0] - b[0]);
-        console.log("min_heap ", minHeap);
+        minHeap.sort((a,b)=> a[0]-b[0]);
+        console.log("init minheap", minHeap)
     });
 
-    var result = [];
-    while (minHeap.length > 0) {
-        console.log("w min_heap ", minHeap);
-        var smallestEntry = minHeap.shift();
-        var smallestArrayIndex = smallestEntry[1];
-        result.push(smallestEntry[0]);
-        var smallestArrayIterator = sortedArraysIterators[smallestArrayIndex];
-        var nextElement = smallestArrayIterator.next().value;
-        if (nextElement !== undefined) {
-            minHeap.push([nextElement, smallestArrayIndex]);
-            minHeap.sort((a, b) => a[0] - b[0]);
-        }
-    }
 
-    return result;
+    let result = [];
+
+    while(minHeap.length>0){
+            let smallestEntry = minHeap.shift();
+            let smallestIdx   = smallestEntry[1];
+
+            result.push(smallestEntry[0]);
+
+            //move to the next element in the array corresponding to the pop entry ( and push it in meanHeap)
+            let nxtElt = sortedArraysIterators[smallestIdx].next().value;
+            if(nxtElt!==undefined){
+                minHeap.push([nxtElt, smallestIdx]);
+                minHeap.sort((a,b)=>a[0]-b[0]);
+            }
+    }
+    return result ;
+
 }
 
 // Sample sorted arrays
