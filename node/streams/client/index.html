@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Viewer</title>
+  <style>
+    pre {
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="streamContainer"></div>
+  <script >
+document.addEventListener('DOMContentLoaded', () => {
+  const streamContainer = document.getElementById('streamContainer');
+
+  // Fetch the stream
+  fetch('http://localhost:3000/stream')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Create a text decoder to convert the stream data to a string
+      const textDecoder = new TextDecoder();
+
+      // Create a readable stream from the response
+      const readableStream = response.body.getReader();
+
+      // Read the stream data
+      const readStream = async () => {
+        while (true) {
+          const { done, value } = await readableStream.read();
+
+          if (done) {
+            break; // Break the loop when the stream is done
+          }
+
+          // Convert the Uint8Array data to a string using the text decoder
+          const decodedValue = textDecoder.decode(value);
+
+          // Display the decoded value in the container
+          //streamContainer.innerHTML += `<pre>${decodedValue}</pre>`;
+          console.log(decodedValue);
+        }
+      };
+
+      // Start reading the stream
+      readStream();
+    })
+    .catch(error => {
+      console.error('Error fetching stream:', error);
+    });
+});
+
+</script>
+</body>
+</html>
