@@ -1,0 +1,1 @@
+/* compute binary parity of some integer */
