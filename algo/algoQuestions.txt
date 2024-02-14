@@ -1,0 +1,8 @@
+4.1 : write a program that will compute the parity of a 16 digit number
+and then use a hash table to calculate efficiently that of a 64 digit num.
+
+5.1 : solve and demonstrate the dutch flag problem
+
+6.1 : write a program that can convert a number to a string and a string to a number.
+
+7.1 : write a program that can merge two ordered linked list into one. 
