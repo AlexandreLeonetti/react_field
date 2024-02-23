@@ -1,0 +1,45 @@
+// Strategy interface
+class PaymentStrategy {
+    pay(amount) {
+        throw new Error('Method "pay" must be implemented');
+    }
+}
+
+// Concrete strategies
+class CreditCardPayment extends PaymentStrategy {
+    pay(amount) {
+        console.log(`Paying $${amount} with credit card`);
+    }
+}
+
+class PayPalPayment extends PaymentStrategy {
+    pay(amount) {
+        console.log(`Paying $${amount} with PayPal`);
+    }
+}
+
+class BankTransferPayment extends PaymentStrategy {
+    pay(amount) {
+        console.log(`Paying $${amount} with bank transfer`);
+    }
+}
+
+// Context
+class ShoppingCart {
+    constructor(paymentStrategy) {
+        this.paymentStrategy = paymentStrategy;
+    }
+
+    checkout(amount) {
+        this.paymentStrategy.pay(amount);
+    }
+}
+
+// Usage
+const cart = new ShoppingCart(new CreditCardPayment());
+cart.checkout(100);
+
+// Change strategy dynamically
+cart.paymentStrategy = new PayPalPayment();
+cart.checkout(50);
+

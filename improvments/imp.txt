@@ -1,0 +1,54 @@
+async function performTransaction(side, qty, precision, sizePrecision, stopLoss, limitLoss, _apiKey, _apiSecret, logStream, bitcoin, symbol, price) {
+    logStream.write(`quantity ${qty}`);
+    const str_bitcoin = qty.toString();
+    const new_bitcoin = formatter(str_bitcoin,  1,  5);
+
+    let tx;
+    if (side === "BUY") {
+        tx = await buy(bor, symbol, new_bitcoin, _apiKey, _apiSecret, logStream);
+    } else {
+        tx = await sell(symbol, new_bitcoin, _apiKey, _apiSecret, logStream);
+    }
+
+    logStream.write(JSON.stringify(tx, null,  2) + `\n`);
+    bitcoin = formatter(tx.executedQty,  0.997, sizePrecision);
+
+    let avgPrice = parseFloat((tx.cummulativeQuoteQty / tx.executedQty).toFixed(precision));
+    let stopPrice = formatter(avgPrice,  1 - stopLoss, precision);
+    let limit = formatter(avgPrice,  1 - limitLoss, precision);
+
+    logStream.write(`symbol ${symbol}, quantity : ${bitcoin}, stopPrice : ${stopPrice}, limit : ${limit} \n`);
+    await robot.sleep(500);
+
+    const stopLossTx = await setStopLoss(side, symbol, bitcoin, stopPrice, limit, _apiKey, _apiSecret, logStream);
+    logStream.write(`placed stop loss\n`);
+    logStream.write(JSON.stringify(stopLossTx, null,  2) + `\n`);
+
+    if (Object.hasOwn(stopLossTx, "code")) {
+        await robot.sleep(1000);
+        stopPrice = formatter(avgPrice,  1 + stopLoss +  0.001, precision);
+        limit = formatter(avgPrice,  1 + limitLoss +  0.001, precision);
+
+        logStream.write(`symbol ${symbol}, quantity : ${bitcoin}, stopPrice : ${stopPrice}, limit : ${limit} \n`);
+        const stopLossTx2 = await setStopLoss(side, symbol, bitcoin, stopPrice, limit, _apiKey, _apiSecret, logStream);
+        logStream.write(`placed stop loss  2nd trial\n`);
+        logStream.write(JSON.stringify(stopLossTx, null,  2) + `\n`);
+    }
+}
+
+async function setStopLoss(side, symbol, bitcoin, stopPrice, limit, _apiKey, _apiSecret, logStream) {
+    let stopLossTx;
+    if (side === "BUY") {
+        stopLossTx = await isolated.stopSell(symbol, "SELL", bitcoin, stopPrice, limit, _apiKey, _apiSecret);
+    } else {
+        stopLossTx = await isolated.stopBuy(symbol, "BUY", bitcoin, stopPrice, limit, _apiKey, _apiSecret);
+    }
+    return stopLossTx;
+}
+
+async function ENTRY(side, qty, precision, sizePrecision, stopLoss, limitLoss, _apiKey, _apiSecret, logStream, fdusd, bor, bitcoin, symbol, price) {
+    if (side === "BUY" || side === "SELL") {
+        await performTransaction(side, qty, precision, sizePrecision, stopLoss, limitLoss, _apiKey, _apiSecret, logStream, bitcoin, symbol, price);
+    }
+}
+

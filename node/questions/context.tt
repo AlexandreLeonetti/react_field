@@ -1,0 +1,9 @@
+let obj = {
+  name: 'Alice',
+  greet: function() {
+    console.log('Hello, ' + this.name);
+  }
+};
+
+const test = obj.greet; // Output: Hello, Alice
+test();

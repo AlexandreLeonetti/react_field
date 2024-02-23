@@ -1,0 +1,14 @@
+'use strict';
+
+function foo() {
+  console.log(this);
+}
+
+function callFoo(fn) {
+  fn.call(this); // Explicit binding using the call method
+}
+
+let obj = { foo };
+
+callFoo.call(obj, obj.foo); // Explicitly binding the foo function to the obj object
+
