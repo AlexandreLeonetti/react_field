@@ -1,7 +1,0 @@
-{
-    "type": "module",
-    "dependencies": {
-        "crypto": "^1.0.1",
-        "mongodb": "^6.3.0"
-    }
-}
